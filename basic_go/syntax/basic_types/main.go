@@ -19,4 +19,10 @@ func main() {
 
 	println("=================")
 	String()
+
+	println("================")
+	Byte()
+
+	println("===============")
+	Bool()
 }
