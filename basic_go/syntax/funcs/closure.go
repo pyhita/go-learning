@@ -16,3 +16,14 @@ func Closure2() func() int {
 		return age
 	}
 }
+
+//func main() {
+//	age := Closure2()
+//
+//	fmt.Println(age())
+//	fmt.Println(age())
+//	fmt.Println(age())
+//
+//	age = Closure2()
+//	fmt.Println(age())
+//}

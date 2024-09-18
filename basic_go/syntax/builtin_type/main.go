@@ -1,6 +1,6 @@
 package main
 
 func main() {
-
-	TestSlice()
+	//TestSlice1()
+	TestSlice2()
 }

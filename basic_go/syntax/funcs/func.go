@@ -1,51 +1,50 @@
 package main
 
-func main() {
-	// 当我们拿到fn 的时候 Closure已经调用完成了
-	// 但是我们在执行fn的时候 依然需要Closure中的name
-	//fn := Closure1("kante")
-	//println(fn())
+import "fmt"
 
-	//getAge := Closure2()
-	//println(getAge())
-	//println(getAge())
-	//println(getAge())
-	//
-	//getAge = Closure2()
-	//println(getAge())
-	//println(getAge())
-	//println(getAge())
+// golang 函数式编程
 
-	//DeferOrder()
-	//TestDeferAndReturn()
-
-	//println(DeferReturnV1())
-	//println(DeferReturnV2())
-	//println(DeferReturnV3().Name)
-
-	// 测试defer 和 返回值
-	TestDefer1()
-	TestDefer2()
-	TestDefer3()
+// 1 函数作为变量进行赋值
+func Fun1() int {
+	return 100
 }
 
-// 函数的四种返回值形式
-func foo1() int {
-	return 2
+func Fun2() int {
+	myFun := Fun1
+
+	return myFun()
 }
 
-func foo2() (int, int) {
-	return 1, 2
+// 2 局部方法，封装公共逻辑，并且不希望别人使用
+func Fun3() string {
+	fn := func() {
+		println("test ...")
+	}
+	fn()
+
+	func() {
+		println("test2 ...")
+	}()
+
+	return "finish"
 }
 
-func foo3() (a, b int) {
-	a = 1
-	b = 1
-	return
+// 3 方法作为返回值
+func Fun4() func(a int) string {
+
+	return func(a int) string {
+		return fmt.Sprintf("%s : %d", "xxx", a)
+	}
 }
 
-func foo4() (a int, b string) {
-	a = 2
-	b = "hello go"
-	return
+// 4 不定长参数， 相当于参数就是一个slice
+// 传参1：sum(1, 2, 3, 4 ...)
+// 传参2：sum(slice)
+func sum(nums ...int) int {
+	res := 0
+
+	for v := range nums {
+		res += v
+	}
+	return res
 }
