@@ -26,5 +26,7 @@ func main() {
 	//println("===============")
 	//Bool()
 
-	StringAndRune()
+	//String()
+	String2()
+	//StringAndRune()
 }
