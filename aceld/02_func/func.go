@@ -21,15 +21,15 @@ func foo2(a int, b string) (int, int) {
 // 第三种：多个返回值命名形式
 func foo3(a int, b string) (ret1 int, ret2 int) {
 	fmt.Println("--foo3--")
-	
+
 	ret1 = 3
 	ret2 = 4
-	return 
+	return
 }
 
 // 第四种：多个返回值命名形式
 func foo4(a int, b string) (ret1, ret2 int) {
-	return 
+	return
 }
 
 // go 语言中的引用传递
@@ -53,4 +53,5 @@ func main() {
 	fmt.Println("before swap a = ", a, " b = ", b)
 	swap(&a, &b)
 	fmt.Println("after swap a = ", a, " b = ", b)
+
 }

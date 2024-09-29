@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+	"time"
+)
 
-// golang 函数式编程
+// golang 函数式编程，函数是一等公民
 
 // 1 函数作为变量进行赋值
 func Fun1() int {
@@ -36,6 +40,14 @@ func Fun4() func(a int) string {
 		return fmt.Sprintf("%s : %d", "xxx", a)
 	}
 }
+
+// 4 函数可以作为参数被传入
+func Fun5() {
+	time.AfterFunc(2*time.Second, func() { println("after 2s .... ") })
+}
+
+// 5 函数可以有自己的类型
+type HttpFunc func(http.ResponseWriter, *http.Request)
 
 // 4 不定长参数， 相当于参数就是一个slice
 // 传参1：sum(1, 2, 3, 4 ...)
