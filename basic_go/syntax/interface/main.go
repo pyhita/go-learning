@@ -1,8 +1,10 @@
 package main
 
 func main() {
-	testList(LinkedList{})
-	testList(ArrayList{})
+	//testList(LinkedList{})
+	//testList(ArrayList{})
+
+	TestEmptyInterface()
 }
 
 // 测试接口
