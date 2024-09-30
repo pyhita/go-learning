@@ -7,7 +7,6 @@ func DeferOrder() {
 	defer println("2. defer")
 
 	defer println("3. defer")
-
 }
 
 // 2 defer 和 return 先后顺序问题
