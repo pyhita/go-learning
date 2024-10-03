@@ -23,9 +23,12 @@ func main() {
 	//println(DeferReturnV2())
 	//println(DeferReturnV3().Name)
 
+	//DeferOrder()
+	TestDeferAndReturn()
+
 	// 测试defer 和 返回值
-	TestDefer1()
-	TestDefer2()
+	//TestDefer1()
+	//TestDefer2()
 	//TestDefer3()
 }
 
