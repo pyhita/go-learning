@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"slices"
 )
 
 func TestSlice1() {
@@ -41,11 +40,11 @@ func TestSlice2() {
 	fmt.Println("copy s2 ", s2, "len(s2) ", len(s2), "cap(s2) ", cap(s2))
 	fmt.Printf("s1 addr %p, s2 addr %p \n", &s1, &s2)
 
-	s3 := []string{"a", "b", "c"}
-	s4 := []string{"a", "b", "c"}
-	if slices.Equal(s3, s4) {
-		fmt.Println("equals")
-	}
+	//s3 := []string{"a", "b", "c"}
+	//s4 := []string{"a", "b", "c"}
+	//if slices.Equals(s3, s4) {
+	//	fmt.Println("equals")
+	//}
 }
 
 // 测试切片的截取操作，左闭右开
