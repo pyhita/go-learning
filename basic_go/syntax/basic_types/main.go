@@ -21,12 +21,12 @@ func main() {
 	//String()
 	//
 	//println("================")
-	//Byte()
+	Byte()
 	//
 	//println("===============")
 	//Bool()
 
 	//String()
-	String2()
+	//String2()
 	//StringAndRune()
 }

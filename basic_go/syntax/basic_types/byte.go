@@ -16,5 +16,6 @@ func Byte() {
 	// 更改切片
 	chs[0] = 'T'
 	// 不会影响到原来的str，说明发生了深度拷贝
-	println(str)
+	println("raw string : " + str)
+	println("modify string : " + string(chs))
 }
