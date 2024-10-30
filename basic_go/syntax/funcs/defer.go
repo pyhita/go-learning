@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 1 多个defer 之间的执行顺序
 func DeferOrder() {
 	defer println("1. defer")
@@ -82,10 +84,10 @@ func DeferReturnV3() *Person {
 
 // defer 的几个测试demo
 func TestDefer1() {
-	println("test demo 1 .......")
+	//println("test demo 1 .......")
 	for i := 0; i < 10; i++ {
 		defer func() {
-			println(i)
+			fmt.Printf("i 的地址：%p，i的值是：%d \n", &i, i)
 		}()
 	}
 }
@@ -93,9 +95,9 @@ func TestDefer1() {
 func TestDefer2() {
 	println("test demo 2 ......")
 	for i := 0; i < 10; i++ {
-		defer func() {
-			println(i)
-		}()
+		defer func(val int) {
+			println(val)
+		}(i)
 	}
 }
 
