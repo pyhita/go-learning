@@ -1,6 +1,8 @@
 module github.com/pyhita/go-learning/go-web/gin/gin-quickstart
 
-go 1.23
+go 1.21.8
+
+toolchain go1.22.8
 
 require (
 	github.com/bytedance/sonic v1.12.2 // indirect

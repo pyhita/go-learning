@@ -1,11 +1,12 @@
 package main
 
 import (
+	"log"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/binding"
 	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/render"
-	"log"
-	"time"
 )
 
 func Logger() gin.HandlerFunc {
@@ -41,12 +42,23 @@ func main() {
 func RegisterRouters(r *gin.Engine) {
 	// register render routes
 	renderAPI := r.Group("/render")
+	v1API := r.Group("/v1")
+	v2API := r.Group("/v2")
 	renderHandler := &render.RenderHandler{}
 	renderAPI.GET("/json", renderHandler.JSON)
 
 	// register binding routes
-	bindingAPI := r.Group("/binding")
+	v1BindingAPI := v1API.Group("/binding")
 	bindingHandler := &binding.BindingHandler{}
-	bindingAPI.GET("/query", bindingHandler.BindingQuryString)
-	bindingAPI.GET("/queryv2", bindingHandler.BindingQueryStringV2)
+	v1BindingAPI.GET("/query", bindingHandler.BindingQueryString)
+	v1BindingAPI.POST("/form", bindingHandler.BindingForm)
+	v1BindingAPI.POST("/json", bindingHandler.BindingJson)
+	v1BindingAPI.POST("/header", bindingHandler.BindingHeader)
+	v1BindingAPI.GET("/path/:name", bindingHandler.BindingPath)
+
+	v2BindingAPI := v2API.Group("/binding")
+	v2BindingAPI.GET("/query", bindingHandler.BindingQuryStringV2)
+	v2BindingAPI.GET("/path/:name", bindingHandler.BindingPathV2)
+	v2BindingAPI.POST("/header", bindingHandler.BindingHeaderV2)
+
 }
