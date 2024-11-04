@@ -8,7 +8,7 @@ import (
 func main() {
 	// print1()
 	// print2()
-	print3()
+	//print3()
 }
 
 // 单变量声明
@@ -45,15 +45,15 @@ func print2() {
 }
 
 const (
-    CategoryBooks = iota // 0
-    CategoryHealth       // 1
-    CategoryClothing     // 2
+	CategoryBooks    = iota // 0
+	CategoryHealth          // 1
+	CategoryClothing        // 2
 )
 
 const (
-	RED = 0
+	RED   = 0
 	GREEN = 1
-	BLUE = 3
+	BLUE  = 3
 )
 
 const (
@@ -64,8 +64,8 @@ const (
 
 // iota 逐行进行累加
 const (
-	a1, b1 = iota * 2 + 1, iota * 2 + 2 // 1 2
-	c1, d1 // 3 4
+	a1, b1 = iota*2 + 1, iota*2 + 2 // 1 2
+	c1, d1                          // 3 4
 
 	e1, f1 = iota * 2, iota * 3 // 4, 6
 )
