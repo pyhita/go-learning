@@ -4,9 +4,10 @@ import (
 	"log"
 	"time"
 
+	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/handler/binding"
+	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/handler/render"
+
 	"github.com/gin-gonic/gin"
-	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/binding"
-	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/render"
 )
 
 func Logger() gin.HandlerFunc {
@@ -50,7 +51,7 @@ func RegisterRouters(r *gin.Engine) {
 	// register binding routes
 	v1BindingAPI := v1API.Group("/binding")
 	bindingHandler := &binding.BindingHandler{}
-	v1BindingAPI.GET("/query", bindingHandler.BindingQueryString)
+	v1BindingAPI.GET("/query", Logger(), bindingHandler.BindingQueryString)
 	v1BindingAPI.POST("/form", bindingHandler.BindingForm)
 	v1BindingAPI.POST("/json", bindingHandler.BindingJson)
 	v1BindingAPI.POST("/header", bindingHandler.BindingHeader)
@@ -60,5 +61,4 @@ func RegisterRouters(r *gin.Engine) {
 	v2BindingAPI.GET("/query", bindingHandler.BindingQuryStringV2)
 	v2BindingAPI.GET("/path/:name", bindingHandler.BindingPathV2)
 	v2BindingAPI.POST("/header", bindingHandler.BindingHeaderV2)
-
 }
