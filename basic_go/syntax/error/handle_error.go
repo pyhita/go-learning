@@ -65,8 +65,10 @@ func HandleErr3() {
 	err1 := fmt.Errorf("wrap err: %w", err)
 	err2 := fmt.Errorf("wrap err: %w", err1)
 
+	// 类似 if e, ok := err.(*MyError); ok { … }
 	var e *MyError
 	if errors.As(err2, &e) {
+		// 如果err类型为*MyError，变量e将被设置为对应的错误值
 		println("MyError is on the chain of err2")
 		println(e == err)
 		return

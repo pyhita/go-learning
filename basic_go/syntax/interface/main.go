@@ -4,7 +4,7 @@ func main() {
 	//testList(LinkedList{})
 	//testList(ArrayList{})
 
-	TestEmptyInterface()
+	EmptyInterface()
 }
 
 // 测试接口

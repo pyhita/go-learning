@@ -9,7 +9,7 @@ type User struct {
 	Addr  string
 }
 
-// 结构体绑定方法，并注意指针和值的差别
+// SetName 结构体绑定方法，并注意指针和值的差别
 // 方法的本质就是将方法的接收体当做第一个参数的函数
 // 如果接受体式指针，那么第一个参数就是指针，反之亦然
 func (this *User) SetName(name string) {

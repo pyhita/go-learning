@@ -10,8 +10,8 @@ func Byte() {
 	println(fmt.Sprintf("%c", a))
 
 	// byte[] 和 string
-	var str string = "this a string"
-	var chs []byte = []byte(str)
+	var str = "this a string"
+	var chs = []byte(str)
 	println(chs)
 	// 更改切片
 	chs[0] = 'T'

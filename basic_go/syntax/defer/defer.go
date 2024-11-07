@@ -80,10 +80,11 @@ func foo2() {
 // 1.22版本中loopvar语义发生了变更，从循环变量i从per loop var变为per iteration var了。
 // 所以每次进入循环，闭包捕获的都是一个新变量i，且该新变量i的值为当次迭代时的i值。等价于1.22版本以前的如下代码：
 func foo3() {
+	var j int
 	for i := 0; i <= 3; i++ {
-		i := i
+		j = i
 		defer func() {
-			fmt.Println(i)
+			fmt.Println(j)
 		}()
 	}
 }

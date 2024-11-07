@@ -4,6 +4,8 @@ import (
 	"log"
 	"time"
 
+	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/handler/signup"
+
 	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/handler/binding"
 	"github.com/pyhita/go-learning/go-web/gin/gin-quickstart/handler/render"
 
@@ -45,6 +47,10 @@ func RegisterRouters(r *gin.Engine) {
 	renderAPI := r.Group("/render")
 	v1API := r.Group("/v1")
 	v2API := r.Group("/v2")
+
+	signupHandler := &signup.SignupHandler{}
+	v1API.POST("/signup", signupHandler.Signup)
+
 	renderHandler := &render.RenderHandler{}
 	renderAPI.GET("/json", renderHandler.JSON)
 
