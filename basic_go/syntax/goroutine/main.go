@@ -24,3 +24,7 @@ func foo(f func() error) chan error {
 
 	return c
 }
+
+func testRebase() {
+
+}
